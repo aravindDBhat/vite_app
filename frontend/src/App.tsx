@@ -8,7 +8,8 @@ import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
 import Alert from "@mui/joy/Alert";
 import axios from "axios";
-import Datatable from "./test.tsx";
+import Datatable from "./table.tsx";
+import SelectAllTransferList from "./list.tsx";
 import "./App.css";
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
   const [phone_no, setPhone_no] = useState("");
   const [email, setEmail] = useState("");
   const [alert, setAlert] = useState("");
-  var nextpage = false;
+  const [nextpage, setNextpage] = useState(false);
+
   const handleName = (e: any) => {
     setName(e.target.value);
   };
@@ -34,54 +36,62 @@ function App() {
     if (!name) {
       setAlert("Please enter the Name");
       setVisible(true);
-      var nextpage = false;
+
       return;
     }
 
     if (!phone_no) {
       setAlert("Please enter the Phone Number");
       setVisible(true);
-      var nextpage = false;
+
       return;
     }
 
     if (!email) {
       setAlert("Please enter the Email");
       setVisible(true);
-      var nextpage = false;
+
       return;
     }
+    setNextpage(true);
     const payload = {
       name,
       phone_no,
       email,
     };
     setVisible(false);
-    nextpage = true;
 
     const config = {
       headers: {
         "Content-Type": "application/json",
       },
     };
-    if (nextpage === true) {
-      const new_data = await axios.post(
-        "http://localhost:3000/api/data",
-        payload,
-        config
-      );
-    }
+
+    const new_data = await axios.post(
+      "http://localhost:3000/api/data",
+      payload,
+      config
+    );
+
     setEmail("");
     setName("");
     setPhone_no("");
   };
   useEffect(() => {
     setVisible;
+    setNextpage;
   });
 
   return (
     <div style={{ textAlign: "left" }}>
-      {nextpage == false ? (
+      {nextpage === true ? (
+        <div>
+          <Datatable />
+          <div>
+            <SelectAllTransferList />
+          </div>
+        </div>
+      ) : (
         <CssVarsProvider>
           <main>
             <Sheet
@@ -160,8 +170,6 @@ function App() {
             </Sheet>
           </main>
         </CssVarsProvider>
-      ) : (
-        <Datatable />
       )}
     </div>
   );

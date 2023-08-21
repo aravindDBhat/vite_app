@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\aravi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @mui/material/Box @mui/x-data-grid
+  C:\Program Files\nodejs\node.exe C:\Users\aravi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @mui/material/Button @mui/material/Grid @mui/material/List @mui/material/Card @mui/material/CardHeader @mui/material/ListItem @mui/material/ListItemText @mui/material/ListItemIcon @mui/material/Checkbox @mui/material/Divider
 
 PATH: 
   C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\aravi\AppData\Local\Microsoft\WindowsApps;C:\Users\aravi\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\mingw64\bin;C:\Users\aravi\AppData\Local\atom\bin;C:\Users\aravi\AppData\Roaming\npm;C:\Program Files\nodejs\;;C:\Users\aravi\AppData\Local\Programs\Hyper\resources\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@mui%2fmaterial/Box: Request "https://registry.yarnpkg.com/@mui%2fmaterial/Box" returned a 405
+  Error: https://registry.yarnpkg.com/@mui%2fmaterial/Button: Request "https://registry.yarnpkg.com/@mui%2fmaterial/Button" returned a 405
       at params.callback [as _callback] (C:\Users\aravi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66154:18)
       at self.callback (C:\Users\aravi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
       at Request.emit (node:events:513:28)
